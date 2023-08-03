@@ -28,17 +28,9 @@ jobs:
       - name: 签到
         run: |
           python3 ./main.py | tee log.md
-          find / -name log.md
-          pwd
         env:
           TYYP_USERNAME: ${{ secrets.TYYP_USERNAME }}
           TYYP_PSW: ${{ secrets.TYYP_PSW }}
-      - uses: actions/checkout@v2
-      - run: |
-          echo "Log path is: $GITHUB_WORKSPACE"
-          echo "查看文件 $(ls -l)"
-      
-      - uses: actions-js/push@master
-        with:
-          github_token: ${{ secrets.PAT_TOKEN }}
-          message: 'Upload log.md'
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+
