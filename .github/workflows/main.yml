@@ -31,4 +31,14 @@ jobs:
         env:
           TYYP_USERNAME: ${{ secrets.TYYP_USERNAME }}
           TYYP_PSW: ${{ secrets.TYYP_PSW }}
-
+      - name: Commit files
+        run: |
+          git config --local user.email "csever@qq.com"
+          git config --local user.name "y377"
+          git add -A
+          #  git commit -m ":rocket: Fetch BingImage at $(date +'%Y-%m-%d %H:%M')" -a
+      - name: 'Push changes'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
