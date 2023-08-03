@@ -37,7 +37,6 @@ jobs:
           git config --global user.email 'csever@qq.com'
           git add log.md
           git commit -m "Update log.md"
-          git remote set-url origin https://${{ secrets.PAT_TOKEN }}@github.com/y377/189pan.git
-          git push origin main
+          git remote set-url origin https://${{ secrets.PAT_TOKEN }}@github.com/y377/189pan.git main
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
