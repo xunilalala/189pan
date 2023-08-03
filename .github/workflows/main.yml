@@ -31,12 +31,11 @@ jobs:
         env:
           TYYP_USERNAME: ${{ secrets.TYYP_USERNAME }}
           TYYP_PSW: ${{ secrets.TYYP_PSW }}
-      - name: Commit and push log.md
+      - uses: actions/checkout@v2
+      - name: Move log file
         run: |
-          git config --global user.name 'y377'
-          git config --global user.email 'csever@qq.com'
-          git add log.md
-          git remote set-url origin git@github.com:y377/189pan.git
-          git push origin main
-        env:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+          mv log.md ./log.md
+      
+      - uses: actions-js/push@master
+        with:
+          message: 'Upload log.md'
