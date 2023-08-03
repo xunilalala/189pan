@@ -28,9 +28,10 @@ jobs:
       - name: 签到
         run: |
           python3 ./main.py | tee log.md
+          echo "site在 $(find / -name _site)"
+          cp /home/runner/work/189pan/189pan/log.md $(find / -name _site)
         env:
           TYYP_USERNAME: ${{ secrets.TYYP_USERNAME }}
           TYYP_PSW: ${{ secrets.TYYP_PSW }}
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.2
+
 
