@@ -28,10 +28,13 @@ jobs:
       - name: 签到
         run: |
           python3 ./main.py | tee log.md
-          echo "site在 $(find / -name _site)"
-          cp /home/runner/work/189pan/189pan/log.md $(find / -name _site)
+          cp /home/runner/work/189pan/189pan/log.md ./public
         env:
           TYYP_USERNAME: ${{ secrets.TYYP_USERNAME }}
           TYYP_PSW: ${{ secrets.TYYP_PSW }}
 
-
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
