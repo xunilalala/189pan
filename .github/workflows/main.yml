@@ -1,0 +1,43 @@
+name: 天翼云盘签到
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  schedule:
+    - cron: '30 5,17 * * *'
+  workflow_dispatch:
+  watch:
+    types: started
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: 打印ip地址
+        run: echo "My IP address is $(curl -s ifconfig.me)"
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: 安装环境
+        run: pip install -r requirements.txt
+      - name: 签到
+        run: |
+          python3 ./tyyp.py | tee log.md
+        env:
+          TYYP_USERNAME: ${{ secrets.TYYP_USERNAME }}
+          TYYP_PSW: ${{ secrets.TYYP_PSW }}
+      - name: 上传签到记录
+        run: |
+          # 将 log.md 文件作为一个 artifact 上传
+          echo "::set-output name=artifact-path::log.md"
+        id: upload-artifact
+        continue-on-error: true
+      - name: 创建工件
+        uses: actions/upload-artifact@v2
+        with:
+          name: tyyp-logs
+          path: ${{ steps.upload-artifact.outputs.artifact-path }}
