@@ -37,4 +37,4 @@ jobs:
           git config --global user.email 'csever@qq.com'
           git add log.md
           git commit -m "Update log.md"
-          git push origin master
+          git push origin main
