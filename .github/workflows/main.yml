@@ -26,7 +26,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: 签到
         run: |
-          python3 ./tyyp.py | tee log.md
+          python3 ./main.py | tee log.md
         env:
           TYYP_USERNAME: ${{ secrets.TYYP_USERNAME }}
           TYYP_PSW: ${{ secrets.TYYP_PSW }}
