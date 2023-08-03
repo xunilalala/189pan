@@ -30,14 +30,8 @@ jobs:
         env:
           TYYP_USERNAME: ${{ secrets.TYYP_USERNAME }}
           TYYP_PSW: ${{ secrets.TYYP_PSW }}
-      - name: 上传签到记录
-        run: |
-          # 将 log.md 文件作为一个 artifact 上传
-          echo "::set-output name=artifact-path::log.md"
-        id: upload-artifact
-        continue-on-error: true
-      - name: 创建工件
+      - name: 保存 log.md 文件
         uses: actions/upload-artifact@v2
         with:
-          name: tyyp-logs
-          path: ${{ steps.upload-artifact.outputs.artifact-path }}
+          name: logs
+          path: log.md
