@@ -28,14 +28,15 @@ jobs:
       - name: 签到
         run: |
           python3 ./main.py | tee log.md
+          find / -name log.md
+          pwd
         env:
           TYYP_USERNAME: ${{ secrets.TYYP_USERNAME }}
           TYYP_PSW: ${{ secrets.TYYP_PSW }}
       - uses: actions/checkout@v2
       - run: |
-          echo "Log path is: $GITHUB_WORKSPACE/log.md"
+          echo "Log path is: $GITHUB_WORKSPACE"
           echo "查看文件 $(ls -l)"
-          cp $GITHUB_WORKSPACE/log.md ./log.md
       
       - uses: actions-js/push@master
         with:
