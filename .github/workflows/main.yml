@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Move log file
         run: |
-          mv log.md ./log.md
+          cp log.md ./log.md
       
       - uses: actions-js/push@master
         with:
