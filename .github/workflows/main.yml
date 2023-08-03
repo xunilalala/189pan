@@ -1,4 +1,5 @@
 name: 天翼云盘签到
+
 on:
   push:
     branches: [master]
@@ -30,8 +31,10 @@ jobs:
         env:
           TYYP_USERNAME: ${{ secrets.TYYP_USERNAME }}
           TYYP_PSW: ${{ secrets.TYYP_PSW }}
-      - name: 保存 log.md 文件
-        uses: actions/upload-artifact@v2
-        with:
-          name: logs
-          path: log.md
+      - name: Commit and push log.md
+        run: |
+          git config --global user.name 'y377'
+          git config --global user.email 'csever@qq.com'
+          git add log.md
+          git commit -m "Update log.md"
+          git push origin master
