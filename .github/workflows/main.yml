@@ -27,7 +27,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: 签到
         run: |
-          python3 ./main.py | tee >(sed 's/^/- /' > index.md)
+          (echo "[![签到状态](https://github.com/y377/189pan/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/y377/189pan/actions/workflows/main.yml)" && python3 ./main.py) | tee >(sed 's/^/- /' > index.md)
         env:
           TYYP_USERNAME: ${{ secrets.TYYP_USERNAME }}
           TYYP_PSW: ${{ secrets.TYYP_PSW }}
