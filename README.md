@@ -8,5 +8,5 @@
 ```
 {"errorCode":"User_Not_Chance","errorMsg":"sessionKey=马赛克,activityId=ACT_SIGNIN,ExcuteOverLimitedNumError!"}
 ```
-> 暴露的`sessionKey`我不知道具体作用，但是避免风险显示，顾修复 修复状态：✅
-4. 将每日签到和抽奖数据直接通过GitHub pages展示 改进状态：✔️
+  > 暴露的`sessionKey`我不知道具体作用，但是避免风险显示，顾修复 修复状态：✅
+3. 将每日签到和抽奖数据直接通过GitHub pages展示 改进状态：✔️
