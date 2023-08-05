@@ -27,7 +27,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: 签到
         run: |
-          (echo "---\nlayout: default\ntitle: 签到状态\n---\n\n[![签到状态](https://github.com/y377/189pan/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/y377/189pan/actions/workflows/main.yml)\n\n{{ page.date }}\n\n- " && python3 ./main.py) | tee >(sed 's/^/- /' > index.md)        env:
+          (echo "签到时间 $(date "+%F %T") [![签到状态](https://github.com/y377/189pan/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/y377/189pan/actions/workflows/main.yml)" && ls -ll) | tee >(sed 's/^/- /' > index.md)
+        env:
           TYYP_USERNAME: ${{ secrets.TYYP_USERNAME }}
           TYYP_PSW: ${{ secrets.TYYP_PSW }}
       - name: Git Auto Commit
