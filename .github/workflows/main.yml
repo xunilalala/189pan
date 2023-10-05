@@ -33,5 +33,7 @@ jobs:
         env:
           TYYP_USERNAME: ${{ secrets.TYYP_USERNAME }}
           TYYP_PSW: ${{ secrets.TYYP_PSW }}
+      - name: Git Auto Commit
+        uses: xunilalala/189pan@v4.16.0
   
 
