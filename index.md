@@ -1,7 +1,2 @@
-- 签到时间 2024-01-09 10:11:57 [![签到状态](https://github.com/y377/189pan/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/y377/189pan/actions/workflows/main.yml)
+- 签到时间 2024-01-09 21:41:16 [![签到状态](https://github.com/y377/189pan/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/y377/189pan/actions/workflows/main.yml)
 - 开始执行帐号1
-- 登录成功
-- 已经签到过了，签到获得57M空间
-- 第1抽奖成功：获得天翼云盘50M空间
-- 第2抽奖成功：获得天翼云盘50M空间
-- 第3抽奖成功：获得天翼云盘50M空间
