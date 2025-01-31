@@ -23,18 +23,23 @@ jobs:
       TZ: Asia/Shanghai
     steps:
       - name: Checkout
-        uses: actions/checkout@v4  # ✅ 升级到 v4
+        uses: actions/checkout@v4
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4  # ✅ 升级到 v4
+        uses: actions/configure-pages@v4
 
       - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1  # 保持原状
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2.0.0  # ✅ 明确指定 v2.0.0
+        uses: actions/jekyll-build-pages@v1
         with:
-          path: ./_site  # 显式指定路径（可选但推荐）
+          source: ./
+          destination: ./_site
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v2.0.0
+        with:
+          path: ./_site
+          # 如果 Jekyll 生成隐藏文件（如 .htaccess），需添加：
+          # include-hidden-files: true
 
   deploy:
     environment:
@@ -45,4 +50,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3  # ✅ 升级到 v3
+        uses: actions/deploy-pages@v3
