@@ -1,13 +1,13 @@
-- 签到时间 2025-06-05 21:50:00 [![签到状态](https://github.com/y377/189pan/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/y377/189pan/actions/workflows/main.yml)
+- 签到时间 2025-06-06 11:05:12 [![签到状态](https://github.com/y377/189pan/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/y377/189pan/actions/workflows/main.yml)
 - 开始执行帐号1
 - 登录成功
-- 已经签到过了，签到获得15M空间
-- 第1抽奖失败，可能是次数不足了
+- 已经签到过了，签到获得22M空间
+- 第1抽奖成功：获得天翼云盘50M空间
 - 第2抽奖失败，可能是次数不足了
 - 第3抽奖失败，可能是次数不足了
 - 开始执行帐号2
 - 登录成功
-- 已经签到过了，签到获得99M空间
-- 第1抽奖失败，可能是次数不足了
+- 已经签到过了，签到获得18M空间
+- 第1抽奖成功：获得天翼云盘50M空间
 - 第2抽奖失败，可能是次数不足了
 - 第3抽奖失败，可能是次数不足了
